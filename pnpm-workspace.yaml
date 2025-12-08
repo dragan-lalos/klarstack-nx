@@ -1,0 +1,11 @@
+autoInstallPeers: true
+
+ignoredBuiltDependencies:
+  - '@nestjs/core'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - bcrypt
+  - esbuild
+  - less
+  - msw
+  - nx

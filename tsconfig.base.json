@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "useDefineForClassFields": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@klastack-nx/web/ui": ["libs/web/ui/src"],
+      "@klastack-nx/shared/tailwind": ["libs/shared/tailwind/src/index.ts"],
+      "@klastack-nx/shared/tailwind/*": ["libs/shared/tailwind/src/*"],
+      "@klastack-nx/web-ui/*": ["libs/web/ui/src/*"],
+      "@klastack-nx/web/state": ["libs/web/state/src/index.ts"],
+      "@klastack-nx/infra/database": ["libs/infra/database/src/index.ts"],
+      "@klastack-nx/api/auth": ["libs/api/auth/src/index.ts"],
+      "@klastack-nx/api/tenancy": ["libs/api/tenancy/src/index.ts"],
+      "@klastack-nx/api/client": ["libs/web/api-client/src/index.ts"],
+      "@klastack-nx/web/auth": ["libs/web/auth/src/index.ts"],
+      "@klastack-nx/shared/users": ["libs/shared/users/src/index.ts"],
+      "@klastack-nx/api/users": ["libs/api/users/src/index.ts"],
+      "@klastack-nx/infra/runtime-paths": ["libs/infra/runtime-paths/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

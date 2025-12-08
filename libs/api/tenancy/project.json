@@ -1,0 +1,40 @@
+{
+  "name": "api-tenancy",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/tenancy/src",
+  "projectType": "library",
+  "tags": ["scope:api", "type:feature", "domain:tenancy"],
+  "targets": {
+    "tsc:typecheck": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["^tsc:typecheck"],
+      "options": {
+        "cwd": "libs/api/tenancy",
+        "command": "tsc -p tsconfig.lib.json --noEmit"
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["api-auth:build", "tsc:typecheck"],
+      "options": {
+        "outputPath": "dist/libs/api/tenancy",
+        "main": "libs/api/tenancy/src/index.ts",
+        "tsConfig": "libs/api/tenancy/tsconfig.lib.json",
+        "assets": [],
+        "skipTypeCheck": true
+      }
+    }
+  },
+  "lint": {
+    "executor": "@nx/eslint:lint"
+  },
+  "test": {
+    "executor": "@nx/jest:jest",
+    "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "options": {
+      "jestConfig": "libs/api/tenancy/jest.config.cts",
+      "passWithNoTests": true
+    }
+  }
+}

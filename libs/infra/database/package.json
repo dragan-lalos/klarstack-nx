@@ -1,0 +1,18 @@
+{
+  "name": "@klastack-nx/infra-database",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@mikro-orm/nestjs": "*",
+    "@mikro-orm/postgresql": "*",
+    "@mikro-orm/migrations": "*",
+    "@nestjs/common": "*",
+    "@nestjs/config": "*",
+    "class-transformer": "*",
+    "class-validator": "*"
+  }
+}

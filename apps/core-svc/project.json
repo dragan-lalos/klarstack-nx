@@ -1,0 +1,61 @@
+{
+  "name": "core-svc",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core-svc/src",
+  "projectType": "application",
+  "tags": ["scope:api", "type:app"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{workspaceRoot}/dist/apps/core-svc", "{workspaceRoot}/dist/libs"],
+      "dependsOn": ["shared-users:build:types", "api-users:build:types"],
+      "options": {
+        "main": "apps/core-svc/src/main.ts",
+        "tsConfig": "apps/core-svc/tsconfig.build.json",
+        "outputPath": "dist",
+        "rootDir": ".",
+        "outputFileName": "apps/core-svc/main.js",
+        "clean": false,
+        "assets": [
+          "apps/core-svc/src/assets",
+          {
+            "input": "apps/core-svc",
+            "glob": "main.js",
+            "output": "apps/core-svc"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "core-svc:build",
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "core-svc:build"
+        },
+        "production": {
+          "buildTarget": "core-svc:build"
+        }
+      }
+    },
+    "db:migrate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -r ./dist/libs/infra/runtime-paths/src/index.js ./dist/apps/core-svc/src/scripts/run-migrations.js"
+      },
+      "dependsOn": ["build"]
+    },
+    "db:seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node -r ./dist/libs/infra/runtime-paths/src/index.js ./dist/apps/core-svc/src/scripts/run-seed.js"
+      },
+      "dependsOn": ["build", "db:migrate"]
+    }
+  }
+}

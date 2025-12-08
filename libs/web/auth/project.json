@@ -1,0 +1,12 @@
+{
+  "name": "web-auth",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/auth/src",
+  "projectType": "library",
+  "tags": ["scope:web", "type:feature", "domain:auth"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

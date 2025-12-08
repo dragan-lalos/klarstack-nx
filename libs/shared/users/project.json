@@ -1,0 +1,34 @@
+{
+  "name": "shared-users",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/users/src",
+  "projectType": "library",
+  "tags": ["scope:shared", "type:feature", "domain:users"],
+  "targets": {
+    "tsc:typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p {projectRoot}/tsconfig.lib.json --noEmit"
+      }
+    },
+    "build:types": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/shared/users"],
+      "dependsOn": ["build"],
+      "options": {
+        "command": "tsc -p libs/shared/users/tsconfig.types.json"
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["tsc:typecheck"],
+      "options": {
+        "outputPath": "dist/libs/shared/users",
+        "main": "libs/shared/users/src/index.ts",
+        "tsConfig": "libs/shared/users/tsconfig.lib.json",
+        "assets": ["libs/shared/users/*.md"]
+      }
+    }
+  }
+}

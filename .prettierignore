@@ -1,0 +1,33 @@
+# Build outputs
+dist
+out
+.next
+storybook-static
+
+# Caches
+.nx
+.turbo
+.cache
+.parcel-cache
+.vite
+node_modules
+
+# Coverage
+coverage
+.nyc_output
+
+# Generated / vendor
+**/generated
+**/*.gen.*
+**/*.generated.*
+
+# Lock / package manager internals (optional - keep lock formatted if you prefer)
+# pnpm-lock.yaml
+
+# Env files (never format secrets; also avoids accidental churn)
+.env
+.env.*
+
+# Misc
+*.min.*
+*.map

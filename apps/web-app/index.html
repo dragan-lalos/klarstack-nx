@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Klastack-nx - Security Platform</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Theme initialization script to prevent flash of unstyled content -->
+    <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem('@klastack-nx-theme') || 'system';
+          const root = document.documentElement;
+
+          if (theme === 'dark') {
+            root.classList.add('dark');
+          } else if (theme === 'light') {
+            // Light theme is the default (:root), no class needed
+            root.classList.remove('dark');
+          } else {
+            // System preference
+            const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (isDark) {
+              root.classList.add('dark');
+            } else {
+              root.classList.remove('dark');
+            }
+          }
+        } catch (e) {
+          // Fallback to light mode (no class = default :root styles)
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

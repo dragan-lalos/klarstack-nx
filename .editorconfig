@@ -1,0 +1,30 @@
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown: keep intentional trailing spaces (line breaks)
+[*.{md,mdx}]
+max_line_length = off
+trim_trailing_whitespace = false
+
+# YAML: keep 2 spaces (common), avoid accidental tabs
+[*.{yml,yaml}]
+indent_size = 2
+
+# JSON: keep 2 spaces (matches Prettier default)
+[*.json]
+indent_size = 2
+
+# Shell scripts: ensure LF
+[*.{sh,bash,zsh}]
+end_of_line = lf
+
+# Lock files: don't enforce wrapping/trim rules beyond defaults
+[pnpm-l]()

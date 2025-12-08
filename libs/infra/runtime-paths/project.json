@@ -1,0 +1,64 @@
+{
+  "name": "infra-runtime-paths",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/infra/runtime-paths/src",
+  "projectType": "library",
+  "tags": ["scope:infra", "type:util"],
+  "targets": {
+    "gen:runtime-paths": {
+      "executor": "nx:run-commands",
+      "cache": true,
+      "inputs": [
+        "{workspaceRoot}/tsconfig.base.json",
+        "{workspaceRoot}/tools/scripts/generate-runtime-paths.ts"
+      ],
+      "outputs": ["{projectRoot}/src/lib/register-paths.generated.ts"],
+      "options": {
+        "command": "tsx tools/scripts/generate-runtime-paths.ts"
+      }
+    },
+    "check:runtime-paths": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "parallel": false,
+        "commands": [
+          {
+            "command": "tsx tools/scripts/generate-runtime-paths.ts"
+          },
+          {
+            "command": "git diff --exit-code libs/infra/runtime-paths/src/lib/register-paths.generated.ts"
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["gen:runtime-paths"],
+      "options": {
+        "outputPath": "dist/libs/infra/runtime-paths",
+        "main": "libs/infra/runtime-paths/src/index.ts",
+        "tsConfig": "libs/infra/runtime-paths/tsconfig.lib.json",
+        "assets": ["libs/infra/runtime-paths/*.md"]
+      }
+    },
+    "smoke:runtime-paths": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "dependsOn": ["build"],
+      "options": {
+        "commands": [
+          {
+            "command": "node -e \"const fs=require('node:fs'); const p='./dist/libs/infra/runtime-paths/src/index.js'; if(!fs.existsSync(p)) { console.error('❌ Canonical preload file missing:', p); process.exit(1); } console.log('✅ Canonical preload file exists:', p);\"",
+            "description": "Verify canonical preload file exists"
+          },
+          {
+            "command": "node -r ./dist/libs/infra/runtime-paths/src/index.js -e \"const db = require('@klastack-nx/infra/database'); console.log('✅ Runtime paths smoke test passed')\"",
+            "description": "Test runtime path resolution"
+          }
+        ]
+      }
+    }
+  }
+}

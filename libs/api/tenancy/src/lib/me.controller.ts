@@ -1,0 +1,41 @@
+import { AuthRequiredGuard } from '@klastack-nx/api/auth';
+import { Controller, Get, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
+
+import { TenancyService, MeDto, WorkspaceListItemDto } from './tenancy.service';
+
+import type { Request } from 'express';
+/**
+ * Pattern: "auth-only" routes
+ *
+ * - Requires authentication
+ * - Does NOT require `x-workspace-id` because the user may belong to multiple workspaces
+ */
+@UseGuards(AuthRequiredGuard)
+@Controller()
+export class MeController {
+  constructor(private readonly tenancyService: TenancyService) {}
+
+  /**
+   * GET /api/me
+   */
+  @Get('me')
+  async me(@Req() req: Request): Promise<MeDto> {
+    const userId = req.user?.id;
+    if (!userId) {
+      throw new UnauthorizedException('Unauthorized');
+    }
+    return this.tenancyService.getMe(userId);
+  }
+
+  /**
+   * GET /api/workspaces
+   */
+  @Get('workspaces')
+  async workspaces(@Req() req: Request): Promise<WorkspaceListItemDto[]> {
+    const userId = req.user?.id;
+    if (!userId) {
+      throw new UnauthorizedException('Unauthorized');
+    }
+    return this.tenancyService.listWorkspacesForUser(userId);
+  }
+}

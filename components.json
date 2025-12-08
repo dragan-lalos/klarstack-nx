@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tailwind": {
+    "config": "",
+    "css": "libs/shared/tailwind/src/global.css",
+    "baseColor": "neutral",
+    "cssVariables": true
+  },
+  "aliases": {
+    "ui": "@klastack-nx/web-ui",
+    "components": "libs/web/ui/src/components",
+    "utils": "@klastack-nx/web-ui-utils",
+    "hooks": "libs/web/ui/src/hooks"
+  }
+}

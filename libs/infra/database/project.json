@@ -1,0 +1,30 @@
+{
+  "name": "database",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/infra/database/src",
+  "projectType": "library",
+  "tags": ["scope:api", "type:infra", "domain:database"],
+  "targets": {
+    "tsc:typecheck": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["^tsc:typecheck"],
+      "options": {
+        "cwd": "libs/infra/database",
+        "command": "tsc -p tsconfig.lib.json --noEmit"
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["api-users:build"],
+      "options": {
+        "outputPath": "dist/libs/infra/database",
+        "tsConfig": "libs/infra/database/tsconfig.lib.json",
+        "packageJson": "libs/infra/database/package.json",
+        "main": "libs/infra/database/src/index.ts",
+        "assets": ["libs/infra/database/*.md", "libs/infra/database/src/migrations/**"],
+        "skipTypeCheck": true
+      }
+    }
+  }
+}

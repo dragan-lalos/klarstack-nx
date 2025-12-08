@@ -1,0 +1,25 @@
+{
+  "name": "core-svc-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/core-svc-e2e/src",
+  "tags": ["scope:e2e", "type:e2e"],
+  "implicitDependencies": ["core-svc"],
+  "targets": {
+    "tsc:typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p {projectRoot}/tsconfig.json --noEmit"
+      }
+    },
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/core-svc-e2e/jest.config.cts",
+        "passWithNoTests": true
+      },
+      "dependsOn": ["core-svc:build"]
+    }
+  }
+}

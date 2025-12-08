@@ -1,0 +1,35 @@
+{
+  "name": "api-users",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/users/src",
+  "projectType": "library",
+  "tags": ["scope:api", "type:feature", "domain:users"],
+  "targets": {
+    "tsc:typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p {projectRoot}/tsconfig.lib.json --noEmit"
+      }
+    },
+    "build:types": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/libs/api/users"],
+      "dependsOn": ["build", "shared-users:build:types"],
+      "options": {
+        "command": "tsc -p libs/api/users/tsconfig.types.json"
+      }
+    },
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["tsc:typecheck"],
+      "options": {
+        "outputPath": "dist/libs/api/users",
+        "main": "libs/api/users/src/index.ts",
+        "tsConfig": "libs/api/users/tsconfig.lib.json",
+        "assets": ["libs/api/users/*.md"],
+        "skipTypeCheck": true
+      }
+    }
+  }
+}

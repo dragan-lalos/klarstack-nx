@@ -1,0 +1,12 @@
+{
+  "name": "@klastack-nx/infra/runtime-paths",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@swc/helpers": "~0.5.11",
+    "tsconfig-paths": "^4.2.0"
+  }
+}

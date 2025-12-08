@@ -1,0 +1,123 @@
+# =====================================
+# OS / Editor
+# =====================================
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# =====================================
+# Logs
+# =====================================
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =====================================
+# Node / Package managers
+# =====================================
+node_modules/
+jspm_packages/
+web_modules/
+
+# Yarn v3+ (if ever used)
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# =====================================
+# Build outputs
+# =====================================
+dist/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+**/.vitepress/dist
+**/.vitepress/cache
+.vuepress/dist
+.docusaurus
+storybook-static/
+
+# =====================================
+# Coverage / test artifacts
+# =====================================
+coverage/
+*.lcov
+.nyc_output
+
+# =====================================
+# Tooling caches
+# =====================================
+.cache/
+.parcel-cache
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+.vite/
+vite.config.*.timestamp-*
+
+# Nx / Turborepo cache
+.nx/
+.turbo/
+
+# =====================================
+# Runtime / temp
+# =====================================
+tmp/
+.tmp/
+pids
+*.pid
+*.seed
+*.pid.lock
+.tern-port
+.node_repl_history
+
+# =====================================
+# Env files (keep example)
+# =====================================
+.env
+.env.*
+!.env.example
+
+# =====================================
+# Secrets / certificates (defensive)
+# =====================================
+*.pem
+*.key
+*.p12
+*.pfx
+
+# =====================================
+# Misc
+# =====================================
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+.lock-wscript
+build/Release
+.grunt
+bower_components
+.serverless/
+.dynamodb/
+.firebase/
+.vscode-test
+
+# Next.js
+.next
+out
+
+# TypeScript
+**/*.d.ts
+!**/types/**/*.d.ts
