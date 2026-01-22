@@ -1,3 +1,4 @@
+import { WorkspaceStatsEntity } from '@klastack-nx/api/stats';
 import { UserEntity, WorkspaceEntity, MembershipEntity } from '@klastack-nx/shared/users';
 import { Migrator } from '@mikro-orm/migrations';
 import { MikroOrmModule } from '@mikro-orm/nestjs';
@@ -46,7 +47,7 @@ import databaseConfig, { DATABASE_CONFIG_KEY } from './database.config';
           },
 
           // Use explicit entity list for bundled builds
-          entities: [UserEntity, WorkspaceEntity, MembershipEntity],
+          entities: [UserEntity, WorkspaceEntity, MembershipEntity, WorkspaceStatsEntity],
 
           extensions: [Migrator],
           migrations: {

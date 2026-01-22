@@ -16,7 +16,7 @@
     "build": {
       "executor": "@nx/js:swc",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": ["api-users:build"],
+      "dependsOn": ["api-users:build", "api-stats:build"],
       "options": {
         "outputPath": "dist/libs/infra/database",
         "tsConfig": "libs/infra/database/tsconfig.lib.json",

@@ -1,7 +1,7 @@
 import { AuthRequiredGuard } from '@klastack-nx/api/auth';
-import { Controller, Get, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Patch, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
 
-import { TenancyService, MeDto, WorkspaceListItemDto } from './tenancy.service';
+import { TenancyService, MeDto, MeUserDto, UpdateMeDto, WorkspaceListItemDto } from './tenancy.service';
 
 import type { Request } from 'express';
 /**
@@ -25,6 +25,18 @@ export class MeController {
       throw new UnauthorizedException('Unauthorized');
     }
     return this.tenancyService.getMe(userId);
+  }
+
+  /**
+   * PATCH /api/me
+   */
+  @Patch('me')
+  async updateMe(@Req() req: Request, @Body() dto: UpdateMeDto): Promise<MeUserDto> {
+    const userId = req.user?.id;
+    if (!userId) {
+      throw new UnauthorizedException('Unauthorized');
+    }
+    return this.tenancyService.updateMe(userId, dto);
   }
 
   /**

@@ -1,4 +1,5 @@
 import { AuthModule } from '@klastack-nx/api/auth';
+import { StatsModule } from '@klastack-nx/api/stats';
 import { TenancyModule } from '@klastack-nx/api/tenancy';
 import { UsersModule } from '@klastack-nx/api/users';
 import { DatabaseModule } from '@klastack-nx/infra/database';
@@ -29,6 +30,8 @@ import { TraceIdMiddleware } from '../middleware/trace-id.middleware';
     AuthModule,
     // Tenancy v1 (health, /me, /workspaces, workspace guard)
     TenancyModule,
+    // Stats module (workspace-scoped statistics)
+    StatsModule,
   ],
   controllers: [AppController],
   providers: [

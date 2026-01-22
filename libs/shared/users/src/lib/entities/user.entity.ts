@@ -21,6 +21,15 @@ export class UserEntity {
   @Property({ columnType: 'varchar(255)' })
   passwordHash!: string;
 
+  @Property({ type: 'varchar', length: 255, nullable: true })
+  displayName?: string | null;
+
+  @Property({ type: 'varchar', length: 100, nullable: true })
+  timezone?: string | null;
+
+  @Property({ type: 'boolean', default: true })
+  emailNotifications = true;
+
   @Enum(() => UserRole)
   @Property({ default: UserRole.USER })
   role: UserRole = UserRole.USER;

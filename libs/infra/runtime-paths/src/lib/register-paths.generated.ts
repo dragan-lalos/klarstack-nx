@@ -25,6 +25,9 @@ const runtimePaths: Record<string, string[]> = {
   "@klastack-nx/api/client": [
     "libs/web/api-client/src/index.js"
   ],
+  "@klastack-nx/api/stats": [
+    "libs/api/stats/src/index.js"
+  ],
   "@klastack-nx/api/tenancy": [
     "libs/api/tenancy/src/index.js"
   ],

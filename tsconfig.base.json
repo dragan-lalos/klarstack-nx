@@ -27,7 +27,8 @@
       "@klastack-nx/web/auth": ["libs/web/auth/src/index.ts"],
       "@klastack-nx/shared/users": ["libs/shared/users/src/index.ts"],
       "@klastack-nx/api/users": ["libs/api/users/src/index.ts"],
-      "@klastack-nx/infra/runtime-paths": ["libs/infra/runtime-paths/src/index.ts"]
+      "@klastack-nx/infra/runtime-paths": ["libs/infra/runtime-paths/src/index.ts"],
+      "@klastack-nx/api/stats": ["libs/api/stats/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
