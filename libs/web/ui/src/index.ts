@@ -44,23 +44,13 @@ export {
 } from './components/ds/card';
 export type { DSCardProps } from './components/ds/card';
 
-export {
-  DSDialog,
-  DSDialogHeader,
-  DSDialogTitle,
-  DSDialogDescription,
-  DSDialogContent,
-  DSDialogFooter,
-} from './components/ds/dialog';
-export type { DSDialogProps } from './components/ds/dialog';
+// NOTE: DSDialog, DSTabs, and DSToast use React Context and are client-only.
+// They are NOT exported to avoid pulling client code into server components.
+// Import them directly from their source files in client components only.
 
-export { DSTabs, DSTabsList, DSTabsTrigger, DSTabsContent } from './components/ds/tabs';
-export type {
-  DSTabsProps,
-  DSTabsBaseProps,
-  DSTabsTriggerBaseProps,
-  DSTabsContentBaseProps,
-} from './components/ds/tabs';
+// NOTE: DSTabs, DSToast, and DSDialog use React Context and are client-only.
+// They are NOT exported to avoid pulling client code into server components.
+// Import them directly from their source files in client components only.
 
 export {
   DSTable,
@@ -74,21 +64,12 @@ export {
 } from './components/ds/table';
 export type { DSTableProps } from './components/ds/table';
 
-export { DSToast, useToast } from './components/ds/toast';
-export type { DSToastProps, DSToastBaseProps } from './components/ds/toast';
-
 // ============================================================================
 // Pattern Components (MVP Building Blocks)
 // ============================================================================
-
-export { AppShell } from './components/patterns/app-shell';
-export type { AppShellProps } from './components/patterns/app-shell';
-
-export { SidebarNav } from './components/patterns/sidebar-nav';
-export type { SidebarNavProps, NavItem, NavGroup } from './components/patterns/sidebar-nav';
-
-export { Topbar } from './components/patterns/topbar';
-export type { TopbarProps } from './components/patterns/topbar';
+// NOTE: Pattern components with client hooks (Topbar, AppShell) are NOT exported
+// to avoid pulling client-side code into server components. Import them directly
+// from their source files in client components only.
 
 export { PageHeader } from './components/patterns/page-header';
 export type { PageHeaderProps } from './components/patterns/page-header';
@@ -111,9 +92,3 @@ export type { MapPlaceholderProps } from './components/patterns/map-placeholder'
 export { EvidencePanel } from './components/patterns/evidence-panel';
 export type { EvidencePanelProps, Signal } from './components/patterns/evidence-panel';
 
-// ============================================================================
-// Hooks
-// ============================================================================
-
-export { useTheme } from './hooks/use-theme';
-export type { Theme } from './hooks/use-theme';

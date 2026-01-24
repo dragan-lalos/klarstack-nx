@@ -5,7 +5,7 @@
  * the repo root and config to ensure theme tokens/utilities are available when
  * this stylesheet is compiled (e.g. for apps importing `@klastack-nx/shared-tailwind/global.css`).
  */
-@import 'tailwindcss' source('../../../../');
+@import 'tailwindcss';
 
 @config "../../../../tailwind.config.ts";
 
