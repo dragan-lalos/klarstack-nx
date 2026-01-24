@@ -1,4 +1,5 @@
 @import '../../../../libs/shared/tailwind/src/global.css';
+@import '../styles/theme.css';
 
 @layer base {
   html {

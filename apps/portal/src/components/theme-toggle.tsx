@@ -1,9 +1,9 @@
 'use client';
 
-import { useTheme } from './theme-provider';
+import { useTheme } from '@klastack-nx/web/ui';
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { resolvedTheme, toggleTheme } = useTheme();
 
   return (
     <button
@@ -11,7 +11,7 @@ export function ThemeToggle() {
       className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
       aria-label="Toggle theme"
     >
-      {theme === 'dark' ? (
+      {resolvedTheme === 'dark' ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"

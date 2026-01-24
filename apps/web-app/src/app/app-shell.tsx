@@ -8,6 +8,7 @@ import { WorkspaceSwitcher } from '../features/workspaces/workspace-switcher';
 import { isApiError } from '../shared/api/api.types';
 import { EmptyState } from '../shared/patterns';
 import { Button } from '../shared/ui/button';
+import { ThemeToggle } from '../shared/ui/theme-toggle';
 
 interface NavItem {
   label: string;
@@ -72,6 +73,7 @@ const AppShellComponent = () => {
                   {isLoading ? 'Fetching profile...' : 'Signed in'}
                 </div>
               </div>
+              <ThemeToggle />
               <Button variant="outline" size="sm" onClick={logout}>
                 Log out
               </Button>

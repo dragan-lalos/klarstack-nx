@@ -1,8 +1,7 @@
-import { DSButton } from '@klastack-nx/web/ui';
 import Link from 'next/link';
 
-import { ThemeToggle } from '../theme-toggle';
 import { DOCS_URL, REPO_URL, SITE_NAME } from '../../lib/site';
+import { ThemeToggle } from '../theme-toggle';
 
 const navLinks = [
   { label: 'Home', href: '/' },

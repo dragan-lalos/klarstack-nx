@@ -1,7 +1,7 @@
 import { cn } from '@klastack-nx/shared/tailwind';
 import * as React from 'react';
 
-import { useTheme } from '../../hooks/use-theme';
+import { useTheme } from '../../theme';
 import { DSButton } from '../ds/button';
 
 /**

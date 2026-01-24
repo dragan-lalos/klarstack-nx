@@ -9,8 +9,8 @@ import * as React from 'react';
 type KPITrend = 'up' | 'down' | 'neutral';
 
 const TREND_COLORS: Record<KPITrend, string> = {
-  up: 'text-green-600 dark:text-green-500',
-  down: 'text-red-600 dark:text-red-500',
+  up: 'text-success',
+  down: 'text-destructive',
   neutral: 'text-muted-foreground',
 };
 

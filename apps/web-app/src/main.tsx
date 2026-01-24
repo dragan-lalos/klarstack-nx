@@ -3,6 +3,8 @@ import * as ReactDOM from 'react-dom/client';
 
 // Import global styles (includes theme tokens and Tailwind)
 import '@klastack-nx/shared/tailwind/global.css';
+// Import app-specific theme tokens
+import './styles/theme.css';
 
 import { AppMain } from './app/main';
 

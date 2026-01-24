@@ -1,0 +1,103 @@
+/**
+ * Web-App Theme Tokens
+ * Brand-specific color values for the B2B backoffice
+ */
+
+@layer base {
+  :root {
+    /* Background & foreground */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary - Web-App brand teal */
+    --primary: 173 80% 40%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent - Web-App brand orange */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Success */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Borders & inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 173 80% 40%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Background & foreground */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Card */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Web-App brand teal (adjusted for dark) */
+    --primary: 173 58% 39%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent - Web-App brand orange (adjusted for dark) */
+    --accent: 20 90% 48%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Success */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Borders & inputs */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 173 58% 39%;
+  }
+}

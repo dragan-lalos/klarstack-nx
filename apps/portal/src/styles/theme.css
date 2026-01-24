@@ -1,0 +1,103 @@
+/**
+ * Portal App Theme Tokens
+ * Brand-specific color values for the marketing site
+ */
+
+@layer base {
+  :root {
+    /* Background & foreground */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary - Portal brand blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent - Portal brand purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Success */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Borders & inputs */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+
+    /* Border radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Background & foreground */
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+
+    /* Card */
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover */
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Portal brand blue (adjusted for dark) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* Secondary */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent - Portal brand purple (adjusted for dark) */
+    --accent: 263 70% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Success */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+
+    /* Borders & inputs */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 60%;
+  }
+}

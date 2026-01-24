@@ -34,7 +34,7 @@
       "continuous": true,
       "options": {
         "cwd": "apps/portal",
-        "command": "next dev"
+        "command": "next dev --port 4201"
       }
     },
     "start": {
@@ -43,7 +43,7 @@
       "dependsOn": ["build"],
       "options": {
         "cwd": "apps/portal",
-        "command": "next start"
+        "command": "next start --port 4201"
       }
     }
   }

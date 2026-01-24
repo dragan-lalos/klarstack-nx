@@ -92,3 +92,18 @@ export type { MapPlaceholderProps } from './components/patterns/map-placeholder'
 export { EvidencePanel } from './components/patterns/evidence-panel';
 export type { EvidencePanelProps, Signal } from './components/patterns/evidence-panel';
 
+// ============================================================================
+// Theme Management (Client Components)
+// ============================================================================
+
+export { ThemeProvider, useTheme, getThemeScript, ThemeSelector } from './theme';
+export type {
+  ThemeProviderOptions,
+  ThemeProviderProps,
+  ThemeContextValue,
+  ThemeOption,
+  ResolvedTheme,
+  Attribute,
+  ThemeScriptOptions,
+} from './theme';
+
